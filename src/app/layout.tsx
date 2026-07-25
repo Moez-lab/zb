@@ -3,8 +3,24 @@ import './globals.css';
 
 const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'Zainab Shezad Studio';
 const siteTagline = process.env.NEXT_PUBLIC_SITE_TAGLINE || 'Original Contemporary Art & Bespoke Commissions.';
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://zb-art.vercel.app';
-const defaultOgImage = 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=1200&h=630&q=80';
+
+// Dynamically determine exact site URL (prioritize env, then Vercel URL, then exact domain)
+const getSiteUrl = () => {
+  if (process.env.NEXT_PUBLIC_SITE_URL && process.env.NEXT_PUBLIC_SITE_URL !== 'http://localhost:3000') {
+    return process.env.NEXT_PUBLIC_SITE_URL.startsWith('http')
+      ? process.env.NEXT_PUBLIC_SITE_URL
+      : `https://${process.env.NEXT_PUBLIC_SITE_URL}`;
+  }
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+  return 'https://zb-two.vercel.app';
+};
+
+const siteUrl = getSiteUrl();
+
+// WhatsApp crawler requires image size under 300KB and exact 1200x630 dimensions
+const defaultOgImage = 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=1200&h=630&fit=crop&q=70&fm=jpg';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -38,6 +54,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: defaultOgImage,
+        secureUrl: defaultOgImage,
         width: 1200,
         height: 630,
         alt: `${siteName} Fine Art Collection`,
