@@ -11,17 +11,17 @@ async function main() {
     update: {},
     create: {
       id: 'singleton',
-      name: 'Elena Reyes',
+      name: 'Zainab Shezad',
       title: 'Contemporary Fine Artist',
-      bio: `Elena Reyes is a contemporary fine artist based in New York City, whose work explores the tension between silence and movement, nature and abstraction. With over a decade of practice in oil and mixed media, her paintings have been exhibited in galleries across Europe and North America.
+      bio: `Zainab Shezad is a contemporary fine artist based in New York City, whose work explores the tension between silence and movement, nature and abstraction. With over a decade of practice in oil and mixed media, her paintings have been exhibited in galleries across Europe and North America.
 
 Her creative process is deeply meditative — each canvas begins as an act of listening, allowing texture, light, and pigment to reveal form organically. She works in large and intimate formats, always seeking that moment where a painting begins to breathe on its own.
 
-Elena's work is held in private collections worldwide and is available for acquisition, commission, and exhibition.`,
+Zainab's work is held in private collections worldwide and is available for acquisition, commission, and exhibition.`,
       photoUrl: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=800&q=80',
       photoPublicId: '',
-      instagram: '@elenareyes.art',
-      email: process.env.EMAIL_TO || 'studio@elenareyes.art',
+      instagram: '@ZainabShezad.art',
+      email: process.env.EMAIL_TO || 'studio@ZainabShezad.art',
     },
   });
 

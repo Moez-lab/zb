@@ -25,7 +25,7 @@ export default async function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 mb-24">
             {/* Image — 2 of 5 cols */}
             <div className="lg:col-span-2">
-              <div className="relative sticky top-28">
+              <div className=" relative top-28">
                 {/* Corner decorations */}
                 <div
                   className="absolute -top-5 -left-5 w-16 h-16 border-t-2 border-l-2"
