@@ -1,0 +1,59 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  // Neon requires this for serverless environments
+  directUrl = env("DATABASE_URL")
+}
+
+model Artwork {
+  id          String   @id @default(cuid())
+  title       String
+  category    String
+  price       Float
+  medium      String
+  width       Float
+  height      Float
+  unit        String   @default("inches")
+  framing     String   // e.g. "Unframed", "White frame", "Black frame", "Natural wood"
+  description String   @db.Text
+  imageUrl    String
+  imagePublicId String  @default("") // Cloudinary public_id for deletion
+  customWork  Boolean  @default(true)
+  featured    Boolean  @default(false)
+  available   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([category])
+  @@index([featured])
+  @@index([available])
+}
+
+model About {
+  id         String @id @default("singleton")
+  name       String
+  title      String @default("Artist")
+  bio        String @db.Text
+  photoUrl   String
+  photoPublicId String @default("")
+  instagram  String @default("")
+  email      String @default("")
+  updatedAt  DateTime @updatedAt
+}
+
+model Inquiry {
+  id        String   @id @default(cuid())
+  artworkId String
+  name      String
+  email     String
+  message   String   @db.Text
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
