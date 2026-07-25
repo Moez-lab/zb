@@ -5,8 +5,12 @@ import { getArtworks } from '@/lib/data';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Gallery',
-  description: 'Browse the full collection of original artworks.',
+  title: 'Gallery & Original Collection',
+  description: 'Browse the full collection of original paintings and fine art works by Zainab Shezad.',
+  openGraph: {
+    title: 'Original Art Collection | Zainab Shezad Studio',
+    description: 'Browse the full collection of original paintings and fine art works by Zainab Shezad.',
+  },
 };
 
 export const dynamic = 'force-dynamic';

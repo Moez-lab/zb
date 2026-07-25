@@ -15,11 +15,31 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { id } = await params;
   const artwork = await getArtworkById(id);
   if (!artwork) return { title: 'Artwork Not Found' };
+
+  const title = `${artwork.title} — $${artwork.price.toLocaleString()} USD`;
+  const description = `${artwork.category} artwork by Zainab Shezad. ${artwork.medium}, ${artwork.width}×${artwork.height} ${artwork.unit}. ${artwork.description.substring(0, 140)}…`;
+
   return {
     title: artwork.title,
-    description: artwork.description.substring(0, 160),
+    description,
     openGraph: {
-      images: [{ url: artwork.imageUrl, width: 1200, height: 630, alt: artwork.title }],
+      title,
+      description,
+      type: 'article',
+      images: [
+        {
+          url: artwork.imageUrl,
+          width: 1200,
+          height: 630,
+          alt: artwork.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [artwork.imageUrl],
     },
   };
 }

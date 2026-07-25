@@ -7,7 +7,11 @@ import { Mail, AtSign } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'About the Artist',
-  description: 'Meet the artist behind the collection.',
+  description: 'Discover contemporary fine artist Zainab Shezad — her background, creative process, and custom commissions.',
+  openGraph: {
+    title: 'About Zainab Shezad | Contemporary Fine Artist',
+    description: 'Discover contemporary fine artist Zainab Shezad — her background, creative process, and custom commissions.',
+  },
 };
 
 export const dynamic = 'force-dynamic';
