@@ -15,7 +15,7 @@ function Particle({ delay, duration, x, y }: { delay: number; duration: number; 
         top: y,
         width: 2,
         height: 2,
-        background: 'rgba(201, 168, 76, 0.4)',
+        background: 'rgba(10, 25, 47, 0.25)',
       }}
       animate={{
         y: [0, -30, 0],
@@ -69,7 +69,7 @@ export default function Hero() {
     <section
       ref={containerRef}
       className="relative min-h-screen flex items-center overflow-hidden"
-      style={{ background: 'var(--color-charcoal)' }}
+      style={{ background: '#ffffff' }}
     >
       {/* Background image with parallax */}
       <motion.div
@@ -82,7 +82,7 @@ export default function Hero() {
             backgroundImage: `url('https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=1920&q=60')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            filter: 'brightness(0.25)',
+            filter: 'brightness(0.95)',
           }}
         />
       </motion.div>
@@ -91,13 +91,13 @@ export default function Hero() {
       <div
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(to right, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.4) 60%, rgba(10,10,10,0.1) 100%)',
+          background: 'linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.7) 60%, rgba(255,255,255,0.3) 100%)',
         }}
       />
       <div
         className="absolute bottom-0 left-0 right-0 h-48"
         style={{
-          background: 'linear-gradient(to top, var(--color-charcoal), transparent)',
+          background: 'linear-gradient(to top, #ffffff, transparent)',
         }}
       />
 

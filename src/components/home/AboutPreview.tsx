@@ -29,15 +29,15 @@ export default function AboutPreview({ about }: AboutPreviewProps) {
             {/* Decorative frame */}
             <div
               className="absolute -top-4 -left-4 w-24 h-24 border-t border-l"
-              style={{ borderColor: 'rgba(201,168,76,0.4)' }}
+              style={{ borderColor: 'rgba(10,25,47,0.3)' }}
             />
             <div
               className="absolute -bottom-4 -right-4 w-24 h-24 border-b border-r"
-              style={{ borderColor: 'rgba(201,168,76,0.4)' }}
+              style={{ borderColor: 'rgba(10,25,47,0.3)' }}
             />
 
             <div
-              className="relative overflow-hidden rounded-lg"
+              className="relative overflow-hidden rounded-lg shadow-lg"
               style={{ aspectRatio: '4/5' }}
             >
               <Image
@@ -50,7 +50,7 @@ export default function AboutPreview({ about }: AboutPreviewProps) {
               <div
                 className="absolute inset-0"
                 style={{
-                  background: 'linear-gradient(to top, rgba(10,10,10,0.4) 0%, transparent 50%)',
+                  background: 'linear-gradient(to top, rgba(10,25,47,0.2) 0%, transparent 50%)',
                 }}
               />
             </div>

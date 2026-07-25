@@ -43,10 +43,10 @@ export default function ArtworkCard({ artwork, index = 0, priority = false }: Ar
             {/* Hover overlay */}
             <div
               className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-end p-6"
-              style={{ background: 'linear-gradient(to top, rgba(10,10,10,0.85) 0%, transparent 60%)' }}
+              style={{ background: 'linear-gradient(to top, rgba(10,25,47,0.85) 0%, transparent 60%)' }}
             >
               <span
-                className="flex items-center gap-2 text-sm tracking-widest uppercase text-[#c9a84c]"
+                className="flex items-center gap-2 text-sm tracking-widest uppercase text-white font-medium"
                 style={{ fontFamily: 'Inter, sans-serif' }}
               >
                 View Artwork <ArrowRight size={14} />
@@ -57,11 +57,11 @@ export default function ArtworkCard({ artwork, index = 0, priority = false }: Ar
             {artwork.available && (
               <div className="absolute top-4 left-4">
                 <span
-                  className="px-3 py-1 text-[10px] tracking-widest uppercase rounded-sm"
+                  className="px-3 py-1 text-[10px] tracking-widest uppercase rounded-sm font-medium shadow-sm"
                   style={{
-                    background: 'rgba(10,10,10,0.85)',
-                    color: 'var(--color-gold)',
-                    border: '1px solid rgba(201,168,76,0.3)',
+                    background: 'rgba(255,255,255,0.95)',
+                    color: '#012A4A',
+                    border: '1px solid rgba(1,42,74,0.2)',
                   }}
                 >
                   Available

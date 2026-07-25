@@ -33,10 +33,10 @@ export default function GalleryGrid({ artworks }: GalleryGridProps) {
           <button
             key={cat}
             onClick={() => setActiveCategory(cat)}
-            className={`px-5 py-2 text-[11px] tracking-[0.15em] uppercase transition-all duration-300 rounded-sm border ${
+            className={`px-5 py-2 text-[11px] tracking-[0.15em] uppercase transition-all duration-300 rounded-sm border shadow-sm ${
               activeCategory === cat
-                ? 'border-[#c9a84c] bg-[rgba(201,168,76,0.12)] text-[#c9a84c]'
-                : 'border-[rgba(255,255,255,0.1)] text-[#9b8e82] hover:border-[#c9a84c] hover:text-[#c9a84c]'
+                ? 'border-[#012A4A] bg-[#012A4A] text-white font-medium shadow-md'
+                : 'border-[rgba(1,42,74,0.15)] text-[#012A4A] hover:border-[#012A4A] hover:text-[#012A4A] bg-white'
             }`}
           >
             {cat}

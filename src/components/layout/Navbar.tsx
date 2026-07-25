@@ -35,7 +35,7 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? 'bg-[#0a0a0aee] backdrop-blur-xl border-b border-[#c9a84c20]'
+            ? 'bg-[#ffffffef] backdrop-blur-xl border-b border-[#012A4A15] shadow-sm'
             : 'bg-transparent'
         }`}
       >
@@ -50,7 +50,7 @@ export default function Navbar() {
             </span>
             <span
               className="text-[10px] tracking-[0.3em] uppercase"
-              style={{ color: 'var(--color-stone)' }}
+              style={{ color: '#012A4A' }}
             >
               Fine Art Collection
             </span>
@@ -64,15 +64,15 @@ export default function Navbar() {
                 href={link.href}
                 className={`relative text-[12px] tracking-[0.2em] uppercase transition-colors duration-300 ${
                   pathname === link.href
-                    ? 'text-[#c9a84c]'
-                    : 'text-[#c5b8ad] hover:text-[#c9a84c]'
+                    ? 'text-[#012A4A] font-semibold'
+                    : 'text-[#012A4A] opacity-80 hover:opacity-100'
                 }`}
               >
                 {link.label}
                 {pathname === link.href && (
                   <motion.span
                     layoutId="nav-underline"
-                    className="absolute -bottom-1 left-0 right-0 h-px bg-[#c9a84c]"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#012A4A]"
                     transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                   />
                 )}
@@ -89,7 +89,7 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden text-[#c5b8ad] hover:text-[#c9a84c] transition-colors"
+            className="md:hidden text-[#012A4A] hover:text-[#013a63] transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -106,11 +106,11 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="fixed inset-y-0 right-0 w-72 z-40 flex flex-col pt-24 px-8"
+            className="fixed inset-y-0 right-0 w-72 z-40 flex flex-col pt-24 px-8 shadow-xl"
             style={{
-              background: 'rgba(10,10,10,0.97)',
+              background: 'rgba(255,255,255,0.98)',
               backdropFilter: 'blur(20px)',
-              borderLeft: '1px solid rgba(201,168,76,0.15)',
+              borderLeft: '1px solid rgba(1,42,74,0.15)',
             }}
           >
             {navLinks.map((link, i) => (
@@ -123,11 +123,11 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   className={`block py-4 text-lg border-b font-display ${
-                    pathname === link.href ? 'text-[#c9a84c]' : 'text-[#c5b8ad]'
+                    pathname === link.href ? 'text-[#012A4A] font-semibold' : 'text-[#012A4A]'
                   }`}
                   style={{
                     fontFamily: 'Cormorant Garamond, serif',
-                    borderColor: 'rgba(201,168,76,0.1)',
+                    borderColor: 'rgba(1,42,74,0.1)',
                   }}
                 >
                   {link.label}
@@ -156,7 +156,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-30 md:hidden"
-            style={{ background: 'rgba(0,0,0,0.5)' }}
+            style={{ background: 'rgba(10,25,47,0.3)' }}
             onClick={() => setMobileOpen(false)}
           />
         )}

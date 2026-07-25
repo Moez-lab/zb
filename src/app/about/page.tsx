@@ -55,22 +55,22 @@ export default async function AboutPage() {
 
                 {/* Name card overlay */}
                 <div
-                  className="absolute bottom-8 left-8 right-8 p-5 rounded-lg"
+                  className="absolute bottom-8 left-8 right-8 p-5 rounded-lg shadow-lg"
                   style={{
-                    background: 'rgba(10,10,10,0.85)',
+                    background: 'rgba(255,255,255,0.95)',
                     backdropFilter: 'blur(12px)',
-                    border: '1px solid rgba(201,168,76,0.2)',
+                    border: '1px solid rgba(10,25,47,0.15)',
                   }}
                 >
                   <p
                     className="font-display text-2xl font-light"
-                    style={{ fontFamily: 'Cormorant Garamond, serif', color: 'var(--color-cream)' }}
+                    style={{ fontFamily: 'Cormorant Garamond, serif', color: '#012A4A' }}
                   >
                     {about.name}
                   </p>
                   <p
                     className="text-xs tracking-widest uppercase mt-1"
-                    style={{ color: 'var(--color-gold)' }}
+                    style={{ color: '#012A4A' }}
                   >
                     {about.title}
                   </p>
