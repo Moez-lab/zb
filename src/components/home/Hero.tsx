@@ -71,35 +71,7 @@ export default function Hero() {
       className="relative min-h-screen flex items-center overflow-hidden"
       style={{ background: '#ffffff' }}
     >
-      {/* Background image with parallax */}
-      <motion.div
-        className="absolute inset-0"
-        style={{ y }}
-      >
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=1920&q=60')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            filter: 'brightness(0.95)',
-          }}
-        />
-      </motion.div>
 
-      {/* Gradient overlays */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background: 'linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.7) 60%, rgba(255,255,255,0.3) 100%)',
-        }}
-      />
-      <div
-        className="absolute bottom-0 left-0 right-0 h-48"
-        style={{
-          background: 'linear-gradient(to top, #ffffff, transparent)',
-        }}
-      />
 
       {/* Floating particles */}
       <div className="absolute inset-0 pointer-events-none">
