@@ -14,8 +14,8 @@ export interface Artwork {
   customWork: boolean;
   featured: boolean;
   available: boolean;
-  createdAt: string;
-  updatedAt: string;
+  createdAt: Date | string;
+  updatedAt: Date | string;
 }
 
 export interface About {
@@ -27,7 +27,7 @@ export interface About {
   photoPublicId: string;
   instagram: string;
   email: string;
-  updatedAt: string;
+  updatedAt: Date | string;
 }
 
 export interface Inquiry {
@@ -37,7 +37,7 @@ export interface Inquiry {
   email: string;
   message: string;
   read: boolean;
-  createdAt: string;
+  createdAt: Date | string;
 }
 
 export interface ApiError {

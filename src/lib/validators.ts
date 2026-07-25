@@ -12,7 +12,7 @@ export const artworkSchema = z.object({
   unit: z.enum(['inches', 'cm']).default('inches'),
   framing: z.string().min(1, 'Framing is required').max(100),
   description: z.string().min(10, 'Description must be at least 10 characters').max(5000),
-  imageUrl: z.string().url('Invalid image URL').optional().or(z.literal('')),
+  imageUrl: z.string().default(''),
   imagePublicId: z.string().optional().default(''),
   customWork: z.coerce.boolean().default(true),
   featured: z.coerce.boolean().default(false),
@@ -23,10 +23,10 @@ export const aboutSchema = z.object({
   name: z.string().min(1, 'Name is required').max(100),
   title: z.string().min(1, 'Title is required').max(100),
   bio: z.string().min(10, 'Bio must be at least 10 characters').max(5000),
-  photoUrl: z.string().url('Invalid photo URL').optional().or(z.literal('')),
+  photoUrl: z.string().default(''),
   photoPublicId: z.string().optional().default(''),
   instagram: z.string().max(100).optional().default(''),
-  email: z.string().email('Invalid email').optional().or(z.literal('')),
+  email: z.string().email('Invalid email').optional().or(z.literal('')).default(''),
 });
 
 export const inquirySchema = z.object({
